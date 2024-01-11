@@ -1,4 +1,5 @@
 import random
+import os
 
 # Vilket rum man befinner sig i
 position = "a2"
@@ -25,20 +26,26 @@ bcd5V = 0
 bcd5V2 = 0
 bcd5V3 = 0
 
-cd1V = 0
+cdV1 = 0
+cdV2 = 0
 c2V = 0
 cd3cd4V = 0
+cd3cd4V2 = 0
+
+d2E = 0
+d2V = 0
 
 
 
 # funktion för rum a1
 def a1():
+    os.system("clear")
     global position
     global a1E
     if a1E == 0:
-        a1E = 1
-    print(a1E, a2E, a3E, a4E)
+        a1E = 1    
     print(f"Nu är du i {position}")
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -56,9 +63,10 @@ def a1():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum a2
 def a2():
+    os.system("clear")
     global position
     print(f"Nu är du i {position}")
-    print(a1E, a2E, a3E, a4E)
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -78,12 +86,13 @@ def a2():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum a3
 def a3():
+    os.system("clear")
     global position
     global a3E
     if a3E == 0:
         a3E = 1
     print(f"Nu är du i {position}")
-    print(a1E, a2E, a3E, a4E)
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -102,12 +111,13 @@ def a3():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum a4
 def a4():
+    os.system("clear")
     global position
     global a4E
     if a4E == 0:
         a4E = 1
     print(f"Nu är du i {position}")
-    print(a1E, a2E, a3E, a4E)
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -125,12 +135,13 @@ def a4():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum a5
 def a5():
+    os.system("clear")
     global position
     global a5E
     if a5E == 0:
         a5E = 1
     print(f"Nu är du i {position}")
-    print(a1E, a2E, a3E, a4E)
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -149,11 +160,13 @@ def a5():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum b2
 def b2():
+    os.system("clear")
     global position
     global b2E
     if b2E == 0:
         b2E = 1
     print(f"Nu är du i {position}")
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -171,11 +184,13 @@ def b2():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum b3b4
 def b3b4():
+    os.system("clear")
     global position
     global b3b4E
     if b3b4E == 0:
         b3b4E = 1
     print(f"Nu är du i {position}")
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -186,19 +201,21 @@ def b3b4():
         elif flytta.lower() == "d":
             print("error")
         elif flytta.lower() == "s":
-            position = "a2"
-            a2()
+            position = "a3"
+            a3()
         elif flytta.lower() == "karta":
             aRowKarta()   
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum bcd5
 def bcd5():
+    os.system("clear")
     global position
     global bcd5E
     if bcd5E == 0:
         bcd5E = 1
     print(f"Nu är du i {position}")
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -217,11 +234,13 @@ def bcd5():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum cd1
 def cd1():
+    os.system("clear")
     global position
     global cd1E
     if cd1E == 0:
         cd1E = 1
     print(f"Nu är du i {position}")
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -239,11 +258,13 @@ def cd1():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum c2
 def c2():
+    os.system("clear")
     global position
     global c2E
     if c2E == 0:
         c2E = 1
     print(f"Nu är du i {position}")
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -263,11 +284,13 @@ def c2():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum cd3cd4
 def cd3cd4():
+    os.system("clear")
     global position
     global cd3cd4E
     if cd3cd4E == 0:
         cd3cd4E = 1
     print(f"Nu är du i {position}")
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -287,11 +310,13 @@ def cd3cd4():
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum d2
 def d2():
+    os.system("clear")
     global position
     global d2E
     if d2E == 0:
         d2E = 1
     print(f"Nu är du i {position}")
+    aRowKarta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -393,7 +418,7 @@ b1Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@
                          
                          
                          
-                         """
+                         """.split("\n")
 
 b2Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@
@@ -533,6 +558,18 @@ c2Tom = """
                           
                           """.split("\n")
 
+d2Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@
+@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@
+@|                      |@
+@|         [ ]          |@
+@|________      ________|@""".split("\n")
+
+d2Tom = """                          
+                          
+                          
+                          
+                          """.split("\n")
+
 def karta():
     print(f"""
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -596,7 +633,7 @@ def aRowKarta():
     global b2V
     global b3b4V
     global bcd5V
-    global bcd5v2
+    global bcd5V2
 
     if b2E != 0:
         b2V = b2Hittad
@@ -616,16 +653,19 @@ def aRowKarta():
     global cd1E
     global c2E
     global cd3cd4E
-    global cd1V
+    global cdV1
+    global cdV2
     global c2V
     global cd3cd4V
     global bcd5V3
 
     if cd1E != 0:
         cd1V = cd1HittadBotten
+        cdV2 = cd1HittadTop
         b1V = b1Hittad
     else:
         cd1V = cd1TomBotten
+        cdV2 = cd1TomTop
         b1V = b1Tom
     if c2E != 0:
         c2V = c2Hittad
@@ -633,8 +673,10 @@ def aRowKarta():
         c2V = c2Tom
     if cd3cd4E != 0:
         cd3cd4V = cd3cd4HittadBotten
+        cd3cd4V2 = cd3cd4HittadTop
     else:
         cd3cd4V = cd3cd4TomBotten
+        cd3cd4V2 = cd3cd4TomTop
     if bcd5E != 0:
         bcd5V = bcd5HittadBotten
         bcd5V2 = bcd5HittadMit
@@ -643,6 +685,17 @@ def aRowKarta():
         bcd5V = bcd5TomBotten
         bcd5V2 = bcd5TomMit
         bcd5V3 = bcd5TomTop
+
+    global d2E
+    global d2V
+
+    if d2E != 0:
+        d2V = d2Hittad
+    else:
+        d2V = d2Tom
+
+    for row in zip(cdV2, d2V, cd3cd4V2, bcd5V3):
+        print(row[0] + "" + row[1] + "" + row[2] + "" + row[3])
 
     for row in zip(cd1V, c2V, cd3cd4V, bcd5V2):
         print(row[0] + "" + row[1] + "" + row[2] + "" + row[3])
@@ -663,4 +716,4 @@ a2()
 #     print(row[0] + "" + row[1])
 
 # a1Tom()
-# a2()
+# a2()  
