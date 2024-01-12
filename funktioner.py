@@ -1,13 +1,24 @@
 import random
 import os
 
+#########################
+### Navigatinossystem ###
+#########################
+
+
 # Vilket rum man befinner sig i
 position = "a2"
+
+# Variabler som håller koll på vilket rum man har varit i, 0 = inte varit i rummet, 1 = varit eller befinner sig i rummet
 a1E = 0
 a2E = 0
 a3E = 0
 a4E = 0
 a5E = 0
+a1V = 0
+a3V = 0
+a4V = 0
+a5V = 0
 b2E = 0
 b3b4E = 0
 bcd5E = 0
@@ -15,27 +26,41 @@ cd1E = 0
 c2E = 0
 cd3cd4E = 0
 d2E = 0
-
-a1V = 0
-a3V = 0
-a4V = 0
-a5V = 0
 b2V = 0
 b3b4V = 0
 bcd5V = 0
 bcd5V2 = 0
 bcd5V3 = 0
-
 cdV1 = 0
 cdV2 = 0
 c2V = 0
 cd3cd4V = 0
 cd3cd4V2 = 0
-
 d2E = 0
 d2V = 0
 
-
+# funktion för att avsluta spelet
+def avslutaSpel():
+    # print som ger dig 2 val
+    print("Är du säker på att du vill avsluta?")
+    print("'bekräfta' eller 'avbryt'")
+    # input där du svarar på frågan ovan
+    while True:
+        svar = input("...")
+        # 2 listor med fel- och rättstavelser
+        olikaSvarB = ["bekräfta", "bäkrefta", "b", "bekräftga", "bekrägta", "berkäfta"]
+        olikaSvarA = ["avnryt", "avbryt", "abvryt", "avbrty", "avbrty", "a"]
+        if svar.lower() in olikaSvarB:
+            # om svar är bekräfta så avslutas spelet
+            exit("Spelet avsutas...")
+        elif svar.lower() in olikaSvarA:
+            # om svar är avbryt så fortätter spelet
+            os.system("clear")
+            break
+        else:
+            # om svaret inte finns på någon lista
+            print("Svara med 'bekräfta för att avsluta spelet\nEller skriv 'avbryt' för att fortsätta spela")
+        os.system("clear")
 
 # funktion för rum a1
 def a1():
@@ -45,7 +70,7 @@ def a1():
     if a1E == 0:
         a1E = 1    
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -58,7 +83,9 @@ def a1():
         elif flytta.lower() == "s":
             print("error")
         elif flytta.lower() == "karta":
-            aRowKarta()
+            karta()
+        elif flytta.lower() == "exit":
+            avslutaSpel()            
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum a2
@@ -66,7 +93,7 @@ def a2():
     os.system("clear")
     global position
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -81,7 +108,9 @@ def a2():
         elif flytta.lower() == "s":
             print("error")
         elif flytta.lower() == "karta":
-            aRowKarta()
+            karta()
+        elif flytta.lower() == "exit":
+            avslutaSpel()
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum a3
@@ -92,7 +121,7 @@ def a3():
     if a3E == 0:
         a3E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -106,7 +135,9 @@ def a3():
         elif flytta.lower() == "s":
             print("error")
         elif flytta.lower() == "karta":
-            aRowKarta()            
+            karta()  
+        elif flytta.lower() == "exit":
+            avslutaSpel()                      
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum a4
@@ -117,7 +148,7 @@ def a4():
     if a4E == 0:
         a4E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -130,7 +161,9 @@ def a4():
         elif flytta.lower() == "s":
             print("error")
         elif flytta.lower() == "karta":
-            aRowKarta()
+            karta()
+        elif flytta.lower() == "exit":
+            avslutaSpel()
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum a5
@@ -141,7 +174,7 @@ def a5():
     if a5E == 0:
         a5E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -155,7 +188,9 @@ def a5():
         elif flytta.lower() == "s":
             print("error")
         elif flytta.lower() == "karta":
-            aRowKarta()
+            karta()
+        elif flytta.lower() == "exit":
+            avslutaSpel()
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum b2
@@ -166,7 +201,7 @@ def b2():
     if b2E == 0:
         b2E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -179,7 +214,9 @@ def b2():
             position = "a2"
             a2()
         elif flytta.lower() == "karta":
-            aRowKarta()   
+            karta()  
+        elif flytta.lower() == "exit":
+            avslutaSpel() 
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum b3b4
@@ -190,7 +227,7 @@ def b3b4():
     if b3b4E == 0:
         b3b4E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -204,7 +241,9 @@ def b3b4():
             position = "a3"
             a3()
         elif flytta.lower() == "karta":
-            aRowKarta()   
+            karta()   
+        elif flytta.lower() == "exit":
+            avslutaSpel()
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum bcd5
@@ -215,7 +254,7 @@ def bcd5():
     if bcd5E == 0:
         bcd5E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -229,7 +268,9 @@ def bcd5():
             position = "a5"
             a5()
         elif flytta.lower() == "karta":
-            aRowKarta()   
+            karta()   
+        elif flytta.lower() == "exit":
+            avslutaSpel()
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum cd1
@@ -240,7 +281,7 @@ def cd1():
     if cd1E == 0:
         cd1E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -253,7 +294,9 @@ def cd1():
         elif flytta.lower() == "s":
             print("error")
         elif flytta.lower() == "karta":
-            aRowKarta()  
+            karta()  
+        elif flytta.lower() == "exit":
+            avslutaSpel()
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum c2
@@ -264,7 +307,7 @@ def c2():
     if c2E == 0:
         c2E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -279,7 +322,9 @@ def c2():
         elif flytta.lower() == "s":
             print("error")
         elif flytta.lower() == "karta":
-            aRowKarta()  
+            karta() 
+        elif flytta.lower() == "exit":
+            avslutaSpel() 
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum cd3cd4
@@ -290,7 +335,7 @@ def cd3cd4():
     if cd3cd4E == 0:
         cd3cd4E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -305,7 +350,9 @@ def cd3cd4():
             position = "b3b4"
             b3b4()
         elif flytta.lower() == "karta":
-            aRowKarta()  
+            karta()  
+        elif flytta.lower() == "exit":
+            avslutaSpel()
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 # funktion för rum d2
@@ -316,7 +363,7 @@ def d2():
     if d2E == 0:
         d2E = 1
     print(f"Nu är du i {position}")
-    aRowKarta()
+    karta()
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -329,11 +376,13 @@ def d2():
             position = "c2"
             c2()
         elif flytta.lower() == "karta":
-            aRowKarta()  
+            karta()  
+        elif flytta.lower() == "exit":
+            avslutaSpel()
         else:
             print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
 
-
+# Display på karta för om rummet är hittat
 a1Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@
 @@|                     ¯¯
@@ -341,7 +390,7 @@ a1Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@|                     __
 @@|_____________________|@
 @@@@@@@@@@@@@@@@@@@@@@@@@@""".split("\n")
-    
+# Display på kartan för om rummet INTE är hittat
 a1Tom = """                          
                           
                           
@@ -349,7 +398,7 @@ a1Tom = """
                           
                           
                           """.split("\n")
-
+# Display på karta för om rummet är hittat
 a2Hittad = """@@@@@@@@@@|    |@@@@@@@@@@
 @|¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯¯¯|@
 ¯¯                      ¯¯
@@ -357,7 +406,7 @@ a2Hittad = """@@@@@@@@@@|    |@@@@@@@@@@
 __                      __
 @|______________________|@
 @@@@@@@@@@@@@@@@@@@@@@@@@@""".split("\n")
-
+# Display på karta för om rummet är hittat
 a3Hittad = """@@@@@@@@@@|    |@@@@@@@@@
 @|¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯¯|@
 ¯¯                     |@
@@ -365,7 +414,7 @@ a3Hittad = """@@@@@@@@@@|    |@@@@@@@@@
 __                     |@
 @|_____________________|@
 @@@@@@@@@@@@@@@@@@@@@@@@@""".split("\n")
-    
+# Display på kartan för om rummet INTE är hittat
 a3Tom = """                         
                          
                          
@@ -373,7 +422,7 @@ a3Tom = """
                          
                          
                          """.split("\n")
-
+# Display på karta för om rummet är hittat
 a4Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@
 @|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@
 @|                      ¯¯
@@ -381,7 +430,7 @@ a4Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@
 @|                      __
 @|______________________|@
 @@@@@@@@@@@@@@@@@@@@@@@@@@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 a4Tom = """                          
                           
                           
@@ -389,7 +438,7 @@ a4Tom = """
                           
                           
                           """.split("\n")
-
+# Display på karta för om rummet är hittat
 a5Hittad = """@@@@@@@@@@|    |@@@@@@@@@@
 @|¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯¯|@@
 ¯¯                     |@@
@@ -397,7 +446,7 @@ a5Hittad = """@@@@@@@@@@|    |@@@@@@@@@@
 __                     |@@
 @|_____________________|@@
 @@@@@@@@@@@@@@@@@@@@@@@@@@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 a5Tom = """                          
                           
                           
@@ -405,62 +454,62 @@ a5Tom = """
                           
                           
                           """.split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 b1Tom = """                         
                          
                          
                          
                          
                          """.split("\n")
-
+# Display på karta för om rummet är hittat
 b1Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@
                          
                          
                          
                          
                          """.split("\n")
-
+# Display på karta för om rummet är hittat
 b2Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@
 @@|                      |@
 @@|         [ ]          |@
 @@|                      |@
 @@|________      ________|@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 b2Tom = """                           
                            
                            
                            
                            
                            """.split("\n")
-
+# Display på karta för om rummet är hittat
 b3b4Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@|    |@@@@@@@@@@
 @|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯¯¯|@
 @|                                               |@
 @|                     [ ]                       |@
 @|                                               |@
 @|________      _________________________________|@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 b3b4Tom = """                                                   
                                                    
                                                    
                                                    
                                                    
                                                    """.split("\n")
-
+# Display på karta för om rummet är hittat
 bcd5HittadTop = """@@@@@@@@@@@@@@@@@@@@@@@@@@
 @|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@@
 @|                     |@@
 @|                     |@@
 @|                     |@@""".split("\n")
-
+# Display på karta för om rummet är hittat
 bcd5HittadMit = """@|                     |@@
 @|                     |@@
 ¯¯                     |@@
            [ ]         |@@
 __                     |@@
 @|                     |@@""".split("\n")
-
+# Display på karta för om rummet är hittat
 bcd5HittadBotten = """@|                     |@@
 @|                     |@@
 @|                     |@@
@@ -468,20 +517,20 @@ bcd5HittadBotten = """@|                     |@@
 @|                     |@@
 @|________      _______|@@
 @@@@@@@@@@|    |@@@@@@@@@@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 bcd5TomTop = """                          
                           
                           
                           
                           """.split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 bcd5TomMit = """                          
                           
                           
                           
                           
                           """
-
+# Display på kartan för om rummet INTE är hittat
 bcd5TomBotten = """                          
                           
                           
@@ -489,47 +538,46 @@ bcd5TomBotten = """
                           
                           
                           """.split("\n")
-
-
+# Display på karta för om rummet är hittat
 cd3cd4HittadBotten = """@|                                               |@
 @|                     [ ]                       |@
 ¯¯                                               ¯¯
                                                    
 __                                               __
 @|_________________________________      ________|@""".split("\n")
-
+# Display på karta för om rummet är hittat
 cd3cd4HittadTop = """@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@
 @|                                               |@
 @|                                               |@
 @|                                               |@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 cd3cd4TomBotten = """                                                   
                                                    
                                                    
                                                    
                                                    """.split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 cd3cd4TomTop = """                                                   
                                                    
                                                    
                                                    
                                                    
                                                    """.split("\n")
-
+# Display på karta för om rummet är hittat
 cd1HittadBotten = """@@|                     |@
 @@|         [ ]         |@
 @@|                     ¯¯
 @@|                       
 @@|                     __
 @@|_____________________|@""".split("\n")
-
+# Display på karta för om rummet är hittat
 cd1HittadTop = """@@@@@@@@@@@@@@@@@@@@@@@@@@
 @@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@
 @@|                     |@
 @@|                     |@
 @@|                     |@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 cd1TomBotten = """                          
                           
                           
@@ -537,40 +585,40 @@ cd1TomBotten = """
                           
                           
                           """.split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 cd1TomTop = """                          
                           
                           
                           
                           """.split("\n")
-
+# Display på karta för om rummet är hittat
 c2Hittad = """@@@@@@@@@@|    |@@@@@@@@@@
 @|¯¯¯¯¯¯¯¯      ¯¯¯¯¯¯¯¯|@
 ¯¯                      ¯¯
            [ ]            
 __                      __
 @|______________________|@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 c2Tom = """                          
                           
                           
                           
                           
                           """.split("\n")
-
+# Display på karta för om rummet är hittat
 d2Hittad = """@@@@@@@@@@@@@@@@@@@@@@@@@@
 @|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@
 @|                      |@
 @|         [ ]          |@
 @|________      ________|@""".split("\n")
-
+# Display på kartan för om rummet INTE är hittat
 d2Tom = """                          
                           
                           
                           
                           """.split("\n")
 
-def karta():
+def kartaFull():
     print(f"""
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     @@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@@|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|@@
@@ -598,7 +646,9 @@ def karta():
     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@""")
 
 
-def aRowKarta():
+# funktion för att visa kartan
+def karta():
+    # varaibler för rummen
     global a1E
     global a3E
     global a4E
@@ -608,9 +658,12 @@ def aRowKarta():
     global a4V
     global a5V 
 
+    # om man har varit inne i a1 -
     if a1E != 0:
+        # så blir variabeln a1v en display av rum a1
         a1V = a1Hittad
     else:
+        # om inte så visas rum a1 inte
         a1V = a1Tom
     if a3E != 0:
         a3V = a3Hittad
@@ -694,6 +747,7 @@ def aRowKarta():
     else:
         d2V = d2Tom
 
+    # cred till någon snubbe i ett forum som jag inte vet vart det är någonstans...
     for row in zip(cdV2, d2V, cd3cd4V2, bcd5V3):
         print(row[0] + "" + row[1] + "" + row[2] + "" + row[3])
 
@@ -705,15 +759,18 @@ def aRowKarta():
 
     for row in zip(a1V, a2Hittad, a3V, a4V, a5V):
         print(row[0] + "" + row[1] + "" + row[2] + "" + row[3] + "" + row[4])
-    
+
+#####################
+### Combat system ###
+#####################
+        
+# player stats
+hp = 100
+stamina = 100
+
+
 
 
 
 
 a2()
-
-# for row in zip(a1Hittad, a2Hittad):
-#     print(row[0] + "" + row[1])
-
-# a1Tom()
-# a2()  
