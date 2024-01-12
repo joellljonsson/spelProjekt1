@@ -12,6 +12,8 @@ def forsenadPrint(s):
 def is_valid_integer(input_str):
     return input_str.isdigit()
 
+def skib_stat ():
+
 def start():
     while True:
         val = input("Vill du spela Sigma Souls?\n1. Ja\n2. Nej\n")
@@ -40,6 +42,12 @@ def plot():
                 forsenadPrint("Ogiltigt val, försök igen...\a")
         else:
             forsenadPrint("Felaktig inmatning, försök igen...\a")
+
+def garmit_info():
+    while True:
+        hp = int("100")
+        attack = int("")
+
 
 forsenadPrint("Välkommen1\n")
 start()

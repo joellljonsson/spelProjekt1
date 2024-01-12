@@ -9,9 +9,3 @@ def forsenadPrint(s):
         sys.stdout.flush()
         time.sleep(0.1)
 
-def molotov():
-    
-
-def flash():
-
-
