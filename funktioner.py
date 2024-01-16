@@ -766,11 +766,47 @@ def karta():
         
 # player stats
 hp = 100
-stamina = 100
+fiende = 100
+
+attack = 20
+listAttacks = ["a"]
+
+def combatSpelare():
+    global hp
+    global fiende
+    global attack
+    global listAttacks
+    while True:
+        val = input()
+        if val.lower() == "a":
+            fiende = fiende - attack
+            print(f"han har {fiende} hälsa")
+            break
+        else:
+            print("alternativ\n'a'\n'luh'")
+
+def combatDator():
+    global hp
+    global fiende
+    global attack
+    global listAttacks
+    while True:
+        datorAttack = random.choice(listAttacks)
+        if datorAttack == "a":
+            hp = hp - attack
+            print(f"du har {hp} hälsa")
+            break
+        else:
+            print("alternativ\n'a'\n'luh'")        
 
 
+def combat():
+    global hp
+    global fiende
+    global attack
+    global listAttacks
+    while hp or fiende <= 0:
+        combatSpelare()
+        combatDator()
 
-
-
-
-a2()
+combat()
