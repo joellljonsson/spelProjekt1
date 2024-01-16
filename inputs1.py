@@ -12,8 +12,6 @@ def forsenadPrint(s):
 def is_valid_integer(input_str):
     return input_str.isdigit()
 
-def skib_stat ():
-
 def start():
     while True:
         val = input("Vill du spela Sigma Souls?\n1. Ja\n2. Nej\n")
@@ -43,44 +41,50 @@ def plot():
         else:
             forsenadPrint("Felaktig inmatning, försök igen...\a")
 
-def mc():
+def garmitVSmc():
     hp_mc = 50
-    attack_mc = 4
+    mana_mc = 100
+    attack_mc_light = 5
+    attack_mc_heavy = 8
     turn_mc = 0 
+    
+    hp_g = 100
+    mana_g = 150
+    attack_g_light = 6
+    attack_g_heavy = 9
+    turn_g = 0
 
     while True:
         turn_mc = turn_mc + 1
-        print(f"Turn {turn_mc}")
+        print(f"\nRunda {turn_mc} - Tur för MC")
 
-              
+        attack_choice = input("Välj din attack - Lätt (L) eller Tung (T): ").upper()
 
+        if attack_choice == "T" and mana_mc >= 20:
+            mc_attack = attack_mc_heavy
+            mana_mc = mana_mc - (attack_mc_heavy * 2)
+            print(f"MC använder Tung Attack med {attack_mc_heavy} skada. Mana: {mana_mc}")
+        elif attack_choice == "L":
+            mc_attack = attack_mc_light 
+            mana_mc = mana_mc - (attack_mc_light* 2)
+            print(f"MC använder Lätt Attack med {attack_mc_light} skada. Mana: {mana_mc}")
+        else:
+            print("Ogiltigt val. Turen för MC hoppas över.")
+            continue
 
-    
-#funktionen fär boss1 HP och attacks
-def garmit_info():
-    hp_g = 100
-    attack_g = 5
-    turn = 0
-
-    while True:
-        turn = turn + 1
-        print(f"Turn {turn}")
-
-        hp_g -= attack_g
-
-        print(f"HP: {hp_g}, Attack: {attack_g}")
+        garmit_recieved = mc_attack
+        hp_g -= garmit_recieved
+        print(f"Garmit's HP: {hp_g}")
 
         if hp_g <= 0:
-            print("Game Over - Garmit defeated!")
+            print("Garmit är besegrad! MC vinner!")
             break
 
-        input("Press Enter to continue to the next turn.")
-            
+        turn_g += 1
+        print(f"\nRunda {turn_g} - Tur för Garmit")
 
 
-garmit_info()
-
-
+garmitVSmc()
 
 forsenadPrint("Välkommen1\n")
 start()
