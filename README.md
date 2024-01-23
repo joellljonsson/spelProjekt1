@@ -1,7 +1,8 @@
 # ikneps
 test
-<center>
+
 Välkommen til spelet Sigma Souls
 <div>
 För att klara spelet behöver du klara av några nivåer
-</center>
+<div>
+För att röra dig trycker du på följande kanppar W, A, S och D.
