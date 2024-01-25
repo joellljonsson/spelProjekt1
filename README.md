@@ -1,4 +1,4 @@
-# ikneps
+# sigma souls
 test
 
 Välkommen til spelet Sigma Souls
