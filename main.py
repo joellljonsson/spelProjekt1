@@ -1,0 +1,3 @@
+import funktioner
+
+a2()
