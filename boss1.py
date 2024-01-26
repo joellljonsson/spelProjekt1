@@ -9,8 +9,6 @@ def skriv_långsamt(text, fördröjning=0.1):
         time.sleep(fördröjning)
 
 
-
-
 def garmit():
     skriv_långsamt("ser ut som du har träffat den första boss!, garmit!")
     print('''⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -54,6 +52,4 @@ def garmit():
 
 
 
-
-garmit()
 

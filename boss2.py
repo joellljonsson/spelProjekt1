@@ -9,7 +9,6 @@ def skriv_långsamt(text, fördröjning=0.1):
         time.sleep(fördröjning)
 
 
-
 def gire_fiant():
     skriv_långsamt("Ser ut som du har träffat den andra boss!, gire_fiant")
     print('''                                                                                                                                                                                                
@@ -83,4 +82,3 @@ def gire_fiant():
     
 
 
-gire_fiant()  
