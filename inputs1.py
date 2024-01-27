@@ -2,10 +2,12 @@
 import random
 import time
 import sys
-# import boss1
-# import boss2 
-# import boss3
+import boss1
+import boss2 
+import boss3
 import deathscreen
+
+
 
 #en funktion för foresenad print 
 def forsenadPrint(s):
@@ -56,7 +58,8 @@ def plot():
 
 #funktionen för första boss fight, den här fight är inte komplex, man kan välja mellan lätt och tung attacks och det är samma för bossen
 def garmitVSmc():
-    # boss1.garmit
+    boss1.garmit()
+    
     hp_mc = 80
     mana_mc = 150
     attack_mc_lätt = 6
@@ -67,6 +70,8 @@ def garmitVSmc():
     attack_g_light = 6
     attack_g_heavy = 8
     turn_g = 0
+
+    
 
     while True:
         turn_mc = turn_mc + 1
@@ -91,9 +96,11 @@ def garmitVSmc():
         print(f"Garmit's HP: {hp_g}")
 
         if hp_g <= 0:
-            print("Garmit är besegrad! MC vinner!")
+            deathscreen.win()
             break
+
         elif hp_mc <= 0 or mana_mc <= 0:
+            deathscreen.ds()
             # print("du tog texten här")
             break
         
@@ -112,12 +119,13 @@ def garmitVSmc():
 
         if hp_mc <= 0:
             # print("MC är besegrad! Garmit vinner!")
-            deathscreen
+            deathscreen.ds()
             break
 
 #den här boss fight på andra hand involverar en hpflask och även än mana flask. bossens damage output är based på random integers
 def girefiantVSmc():
     # boss2.girefiant
+    boss2.gire_fiant
     hp_mc = 80
     mana_mc = 150
     attack_mc_lätt = 6
@@ -176,9 +184,10 @@ def girefiantVSmc():
             continue
         
         if hp_gf <= 0:
-            print("\nGire Fiant är besegrad! MC vinner!")
-            break
+            deathscreen.win()
+            continue
         elif hp_mc <= 0 or mana_mc <= 0:
+            deathscreen.ds()
             break
         
         tur_gf = tur_gf + 1
@@ -200,12 +209,12 @@ def girefiantVSmc():
 
         if hp_mc <= 0:
             # print("\nMC är besegrad! Gire Fiant vinner!")
-            deathscreen
+            deathscreen.ds()
             break
 
 #precis som förra fight denna involverar hp och mana flask, men denna involverar  även en super attack och både bosses och använderas attacks använder random nummers! så man hara bara en viss chans att vinna. 
 def raygonVSmc():
-    # boss3.rajgon
+    boss3.rajgon
     hp_mc = 100
     mana_mc = 150
     attack_mc_lätt = 8
@@ -293,13 +302,11 @@ def raygonVSmc():
 
         if hp_mc <= 0:
             # print("\nMC är besegrad! Raygon vinner!")
-            deathscreen
+            deathscreen.ds()
             break
         
         hp_raygon -= mc_attack
 
         if hp_raygon <= 0:
-            print("\nRaygon är besegrad! MC vinner!")
-            break
-
-garmitVSmc()
+            deathscreen.win()
+            continue
