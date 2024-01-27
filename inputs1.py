@@ -208,7 +208,7 @@ def girefiantVSmc():
         hp_gf = hp_gf - mc_attack
 
         if hp_mc <= 0:
-            # print("\nMC är besegrad! Gire Fiant vinner!")
+            # print("\nMC är besegrad! Gire Fiant vinner!!")
             deathscreen.ds()
             break
 
