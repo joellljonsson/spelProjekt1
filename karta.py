@@ -1,5 +1,6 @@
 import random
 import os
+import inputs1
 
 #########################
 ### Navigatinossystem ###
@@ -116,12 +117,14 @@ def a2():
 # funktion för rum a3
 def a3():
     os.system("clear")
+    inputs1.garmitVSmc()
     global position
     global a3E
     if a3E == 0:
         a3E = 1
     print(f"Nu är du i {position}")
     karta()
+
     while True:
         flytta = input()
         if flytta.lower() == "w":
@@ -276,6 +279,7 @@ def bcd5():
 # funktion för rum cd1
 def cd1():
     os.system("clear")
+    inputs1.raygonVSmc()
     global position
     global cd1E
     if cd1E == 0:
@@ -330,6 +334,7 @@ def c2():
 # funktion för rum cd3cd4
 def cd3cd4():
     os.system("clear")
+    # inputs1.girefiantVSmc()
     global position
     global cd3cd4E
     if cd3cd4E == 0:

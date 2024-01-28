@@ -125,7 +125,7 @@ def garmitVSmc():
 #den här boss fight på andra hand involverar en hpflask och även än mana flask. bossens damage output är based på random integers
 def girefiantVSmc():
     # boss2.girefiant
-    boss2.gire_fiant
+    boss2.gire_fiant()
     hp_mc = 80
     mana_mc = 150
     attack_mc_lätt = 6
@@ -185,7 +185,7 @@ def girefiantVSmc():
         
         if hp_gf <= 0:
             deathscreen.win()
-            continue
+            break
         elif hp_mc <= 0 or mana_mc <= 0:
             deathscreen.ds()
             break
@@ -214,7 +214,7 @@ def girefiantVSmc():
 
 #precis som förra fight denna involverar hp och mana flask, men denna involverar  även en super attack och både bosses och använderas attacks använder random nummers! så man hara bara en viss chans att vinna. 
 def raygonVSmc():
-    boss3.rajgon
+    boss3.rajgon()
     hp_mc = 100
     mana_mc = 150
     attack_mc_lätt = 8
@@ -309,4 +309,5 @@ def raygonVSmc():
 
         if hp_raygon <= 0:
             deathscreen.win()
-            continue
+            break
+
