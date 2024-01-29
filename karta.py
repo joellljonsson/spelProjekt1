@@ -1,6 +1,8 @@
 import random
 import os
 import inputs1
+import deathscreen
+import sys
 
 #########################
 ### Navigatinossystem ###
@@ -146,29 +148,15 @@ def a3():
 # funktion för rum a4
 def a4():
     os.system("clear")
+    deathscreen.ending3()
+    sys.exit()
+   
     global position
     global a4E
     if a4E == 0:
         a4E = 1
-    print(f"Nu är du i {position}")
-    karta()
-    while True:
-        flytta = input()
-        if flytta.lower() == "w":
-            print("error")
-        elif flytta.lower() == "a":
-            print("error")
-        elif flytta.lower() == "d":
-            position = "a5"
-            a5()
-        elif flytta.lower() == "s":
-            print("error")
-        elif flytta.lower() == "karta":
-            karta()
-        elif flytta.lower() == "exit":
-            avslutaSpel()
-        else:
-            print("använd w a s d\n'w' för upp\n'a' för vänster\n's' för ner\n'd' för höger")
+
+
 # funktion för rum a5
 def a5():
     os.system("clear")
@@ -334,7 +322,7 @@ def c2():
 # funktion för rum cd3cd4
 def cd3cd4():
     os.system("clear")
-    # inputs1.girefiantVSmc()
+    inputs1.girefiantVSmc()
     global position
     global cd3cd4E
     if cd3cd4E == 0:
@@ -765,4 +753,6 @@ def karta():
     for row in zip(a1V, a2Hittad, a3V, a4V, a5V):
         print(row[0] + "" + row[1] + "" + row[2] + "" + row[3] + "" + row[4])
 
+inputs1.start()
+inputs1.plot()
 a1()

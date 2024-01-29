@@ -35,7 +35,7 @@ def start():
                 forsenadPrint("Du har valt att spela Sigma Souls.")
                 break
             elif val == 2:
-                forsenadPrint("Du har valt t inte spela Sigma Souls.")
+                forsenadPrint("Du har valt att inte spela Sigma Souls.")
                 break
             else:
                 forsenadPrint("Ogiltigt input, försök igen...\a")
@@ -58,8 +58,9 @@ def plot():
 
 #funktionen för första boss fight, den här fight är inte komplex, man kan välja mellan lätt och tung attacks och det är samma för bossen
 def garmitVSmc():
+    #använder en funktion från min egen modul, denna gång för ascii art
     boss1.garmit()
-    
+    #variabler för denna fight, de andra bosser delar liknande egenskaper
     hp_mc = 80
     mana_mc = 150
     attack_mc_lätt = 6
@@ -72,8 +73,9 @@ def garmitVSmc():
     turn_g = 0
 
     
-
+    #en while loop, som slutar när man vinner eller förlorar i spelet!
     while True:
+        #en mätare som räknar antalet "rounds"
         turn_mc = turn_mc + 1
         print(f"\nRunda {turn_mc} - Tur för MC")
 
@@ -95,13 +97,16 @@ def garmitVSmc():
         hp_g = hp_g - garmit_received
         print(f"Garmit's HP: {hp_g}")
 
+        #om bossen dör,
         if hp_g <= 0:
             deathscreen.win()
             break
-
+        
+        #om användaren dör
         elif hp_mc <= 0 or mana_mc <= 0:
             deathscreen.ds()
             # print("du tog texten här")
+            sys.exit()
             break
         
         turn_g = turn_g + 1
@@ -117,14 +122,17 @@ def garmitVSmc():
         hp_mc = hp_mc - garmit_attack
         print(f"MC's HP: {hp_mc}")
 
+        
         if hp_mc <= 0:
             # print("MC är besegrad! Garmit vinner!")
             deathscreen.ds()
+            sys.exit()
             break
 
 #den här boss fight på andra hand involverar en hpflask och även än mana flask. bossens damage output är based på random integers
 def girefiantVSmc():
     # boss2.girefiant
+    #samma sak sker här som förra funktionen
     boss2.gire_fiant()
     hp_mc = 80
     mana_mc = 150
@@ -188,6 +196,7 @@ def girefiantVSmc():
             break
         elif hp_mc <= 0 or mana_mc <= 0:
             deathscreen.ds()
+            sys.exit()
             break
         
         tur_gf = tur_gf + 1
@@ -210,6 +219,7 @@ def girefiantVSmc():
         if hp_mc <= 0:
             # print("\nMC är besegrad! Gire Fiant vinner!!")
             deathscreen.ds()
+            sys.exit()
             break
 
 #precis som förra fight denna involverar hp och mana flask, men denna involverar  även en super attack och både bosses och använderas attacks använder random nummers! så man hara bara en viss chans att vinna. 
@@ -285,9 +295,14 @@ def raygonVSmc():
         
         if hp_raygon <= 0:
             print("\nRaygon är besegrad! MC vinner!")
+            deathscreen.win
+            deathscreen.valj_slutet()
+            sys.exit()
             break
         elif hp_mc <= 0 or mana_mc <= 0:
             print("\nMC är besegrad! Raygon vinner!")
+            deathscreen.ds
+            sys.exit()
             break
         
         tur_raygon += 1
@@ -303,11 +318,16 @@ def raygonVSmc():
         if hp_mc <= 0:
             # print("\nMC är besegrad! Raygon vinner!")
             deathscreen.ds()
+            sys.exit()
             break
         
         hp_raygon -= mc_attack
 
         if hp_raygon <= 0:
             deathscreen.win()
+            deathscreen.valj_slutet()
+            sys.exit()
             break
 
+
+    
